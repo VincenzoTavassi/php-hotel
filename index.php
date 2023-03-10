@@ -52,11 +52,15 @@
 </head>
 <body>
     <div class="container">
+
+
+
 <h1 class="text-center my-2">Lista Hotel</h1>
 
 <table class="table my-5">
   <thead>
     <tr>
+      <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Parcheggio</th>
       <th scope="col">Voto</th>
@@ -66,9 +70,10 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach($hotels as $hotel) : ?>
+    <?php foreach($hotels as $key => $hotel) : ?>
       <tr>
-        <th scope="row"> <?=$hotel["name"]?> </th>
+        <th scope="row"> <?=$key?> </th>
+        <td><?=$hotel["name"]?></td>
         <td><?=$hotel["parking"] ? 'Presente' : 'Assente' ?></td>
         <td><?=$hotel["vote"]?></td>
         <td><?=$hotel["distance_to_center"]?> km</td>
